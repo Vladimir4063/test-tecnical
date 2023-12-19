@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Redirect</title>
+</head>
+<body>
+    <h1>{{title}}</h1>
+    {% for date in data %}
+    <p>{{date.key}}</p>
+    <p>{{date.url}}</p>
+    <p>{{date.active}}</p>
+    <p>{{date.created_at}}</p>
+    <p>_______________</p>
+    {% endfor %}
+
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Generate</button>
+    </form>
+</body>
+</html>
